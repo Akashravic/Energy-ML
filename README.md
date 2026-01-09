@@ -71,6 +71,13 @@ This project aims to:
 
 ---
 
+## Model Diagnostics
+Residual analysis was performed for both monsoon and summer models.
+Monsoon residuals show stable, random error distribution, while summer
+residuals exhibit higher variance due to unobserved behavioral factors.
+
+
+
 ## How to Run
 
 1. Install requirements:
