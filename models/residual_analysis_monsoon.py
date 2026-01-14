@@ -4,9 +4,8 @@ import seaborn as sns
 from utils import load_and_preprocess
 
 
-X_train, X_test, y_train, y_test = load_and_preprocess(
-    target_column="KSEB bill in monsoon"
-)
+(data, feature_names) = load_and_preprocess("KSEB bill in monsoon")
+X_train, X_test, y_train, y_test = data
 
 
 model = joblib.load("saved_models/catboost_monsoon.pkl")

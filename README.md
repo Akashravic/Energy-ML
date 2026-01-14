@@ -44,7 +44,7 @@ This project aims to:
 
 ## Methodology
 - Preprocessing:
-  - Label encoding for categorical features
+  - One hot encoding for categorical features
   - Standard scaling
 - Models:
   - CatBoost Regressor (primary)
@@ -61,11 +61,11 @@ This project aims to:
 
 **Monsoon Model:**
 - R² (CV): 0.71
-- Top Feature: Total Area (71.8%)
+- Top Feature: Total Area (70.9%)
 
 **Summer Model:**
-- R² (CV): 0.65
-- Top Feature: Total Area (71.1%), Orientation more important than in monsoon
+- R² (CV): 0.51
+- Top Feature: Total Area (71.5%), Orientation more important than in monsoon
 
 > Insight: Summer electricity consumption is more influenced by occupant behavior and solar exposure, while monsoon usage is dominated by structural factors.
 

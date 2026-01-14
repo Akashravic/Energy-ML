@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 
+catboost_info/
 # Trained models
 saved_models/
 *.pkl

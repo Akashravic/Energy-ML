@@ -1,15 +1,16 @@
 from catboost import CatBoostRegressor
 from utils import load_and_preprocess
 from sklearn.metrics import r2_score
+from evaluate import evaluate_model
 import joblib
 import os
 
 from sklearn.model_selection import KFold, cross_val_score
 import numpy as np
 
-X_train, X_test, y_train, y_test = load_and_preprocess(
-    target_column="KSEB bill in summer"
-)
+(data, feature_names) = load_and_preprocess("KSEB bill in summer")
+X_train, X_test, y_train, y_test = data
+
 
 model = CatBoostRegressor(
     iterations=300,
@@ -40,6 +41,11 @@ y_pred = model.predict(X_test)
 r2 = r2_score(y_test, y_pred)
 print(f"Summer R² Score: {r2:.4f}")
 
+evaluate_model(model=model,
+               X_test=X_test,
+               y_test=y_test,
+               feature_names=feature_names,
+               season_name="Summer")
 
 os.makedirs("saved_models", exist_ok=True)
 joblib.dump(model, "saved_models/catboost_summer.pkl")
