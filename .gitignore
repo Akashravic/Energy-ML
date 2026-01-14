@@ -1,11 +1,11 @@
-# Python cache
+
 __pycache__/
 *.pyc
 
 catboost_info/
-# Trained models
+
 saved_models/
 *.pkl
 
-# Logs
+
 *.log
